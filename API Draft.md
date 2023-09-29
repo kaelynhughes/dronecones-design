@@ -155,7 +155,7 @@ Reponse fail: {error: string} 400
 
 api.PUT("updateIceCream")
 
-Request params: {iceCreamIdx: number}
+Request params: {iceCream: IceCream}
 
 Response success: {"Succesfully updated Ice Cream."}
 
@@ -165,7 +165,7 @@ Reponse fail: {error: string} 400
 
 api.PUT("updateCone")
 
-Request params: {coneIdx: number}
+Request params: {cone: Cone}
 
 Response success: {"Succesfully updated Cone."}
 
@@ -175,7 +175,7 @@ Reponse fail: {error: string} 400
 
 api.PUT("updateTopping")
 
-Request params: {toppingIdx: number}
+Request params: {topping: Topping}
 
 Response success: {"Succesfully updated Topping."}
 
@@ -213,8 +213,8 @@ Reponse fail: {error: string} 400
 
 
 
-# Note: These might be redundant, but separating all 3 types seems like a good idea to me.
-# Up for debate.
+### Note: These might be redundant, but separating all 3 types seems like a good idea to me.
+### Up for debate.
 
 
 
