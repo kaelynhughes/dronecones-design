@@ -18,7 +18,7 @@ Response fail: Unauthorized user 401
 
 api.POST("registerUser")
 
-Request params: {username: string, password: encrypted string}
+Request params: {newUser: User}
 
 Response success: {"User registered successfully"} 201
 
@@ -26,43 +26,11 @@ Response fail: {error: string} 400
 
 # Customer Menu
 
-### Question: If Ice Cream, Toppings, and Cones all have similar attributes, should they share a type?
-
-api.GET("getAllIceCream")
-
-Request params: { }
-
-Response success: {Array<IceCream>: [ {name: Chocolate, stock: 12, ppu: 0.45, img: choc.png, idx: 1} ]}
-
-Response fail: {error: string} 400
-
----
-
-api.GET("getAllToppings")
-
-Request params: { }
-
-Response success: {Array<Topping>: [ {name: Oreos, stock: 20, ppu: 0.10, img: oreo.png, idx: 1} ]}
-
-Response fail: {error: string} 400
-
----
-
-api.GET("getAllCones")
-
-Request params: { }
-
-Response success: {Array<Cone>: [ {name: Waffle, stock: 3, ppu: 0.40, img: waffle.png, idx: 1} ]}
-
-Response fail: {error: string} 400
-
----
-
 api.GET("getAllProducts")
 
 Request params: { }
 
-Response success: {Array<IceCream, Cone, Topping>}
+Response success: {products: Array<Product>}
 
 Response fail: {error: string} 400
 
@@ -88,7 +56,7 @@ api.GET("getAllDrones")
 
 Request params: { }
 
-Response success: {Array<Drone>: [ {name: Drone2, size: number?, id: 10394825, isActive: true } ]}
+Response success: {Array<Drone>: [ {name: Drone2, size: number, id: 10394825, isActive: true } ]}
 
 Response fail: {error: string} 400
 
@@ -105,7 +73,7 @@ Response success: {earnings: number}
 
 Response fail: {error: string} 400
 
-### See previous note, this would need the employee's username to find orders performed by drones they
+### See previous note, this would use the employee's username to find orders performed by drones they
 ### own, and then calculate their earnings on the server.
 
 # Register Drone
@@ -138,13 +106,11 @@ Response success: {"Drone updated successfully."} 200
 
 Response fail: {error: string} 400
 
-### Note: updateDrone can be used to activate and deactivate a drone, but also change other traits if we so desire.
-
 # View Information: Manager
 
 api.GET("getOrders")
 
-Request params: {orderCount: number} ### Note: this is to limit amount of orders, in case we've got a ton in the db.  Might not be necessary though.
+Request params: {orderCount: number} # Note: this is to limit amount of orders, in case we've got a ton in the db.
 
 Response success: {order: Array<Order>}
 
@@ -154,17 +120,27 @@ Response fail: {error: string} 400
 
 api.GET("getAccounting")
 
-Request params: {date: Date?} ### Note: should we choose how much calculate expense and income from a given date?
+Request params: {date: Date} # Note: This allows the user to choose choose to calculate expense and income from a given date.
 
-Response success: {PLACEHOLDER TEXT} This one is weird.  Do we do all the calculations in the server, or what? Seems complicated.
+Response success: {totalIncome: number, stockExpense: number, employeeExpense: number} 
 
 Response fail: {error: string} 400
 
 # Inventory Management
 
-api.PUT("updateIceCream")
+api.PUT("updateProducts")
 
-Request params: {iceCream: IceCream}
+Request params: {products: Array<Product>}
+
+Response success: {"Succesfully updated Products."}
+
+Response fail: {error: string} 400
+
+---
+
+api.PUT("updateProduct")
+
+Request params: {product: Product}
 
 Response success: {"Succesfully updated Ice Cream."}
 
@@ -172,51 +148,11 @@ Response fail: {error: string} 400
 
 ---
 
-api.PUT("updateCone")
+api.POST("addProduct")
 
-Request params: {cone: Cone}
+Request params: {product: Product}
 
-Response success: {"Succesfully updated Cone."}
-
-Response fail: {error: string} 400
-
----
-
-api.PUT("updateTopping")
-
-Request params: {topping: Topping}
-
-Response success: {"Succesfully updated Topping."}
-
-Response fail: {error: string} 400
-
----
-
-api.POST("addIceCream")
-
-Request params: {iceCream: IceCream}
-
-Response success: {"Succesfully added new Ice Cream."}
-
-Response fail: {error: string} 400
-
----
-
-api.POST("addCone")
-
-Request params: {cone: Cone}
-
-Response success: {"Succesfully added new Cone."}
-
-Response fail: {error: string} 400
-
----
-
-api.POST("addTopping")
-
-Request params: {topping: Topping}
-
-Response success: {"Succesfully added new Topping."}
+Response success: {"Succesfully added new Product."}
 
 Response fail: {error: string} 400
 
@@ -240,10 +176,3 @@ Response success: {"User updated successfully"}
 
 Response fail: {error: string} 400
 
-
-
-
-
-
-
-◊
