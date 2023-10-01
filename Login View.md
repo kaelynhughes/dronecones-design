@@ -23,31 +23,34 @@ Finally, there must be a link labelled 'Need an account?' that will direct the u
 Action: [???]
     label
         for: username
-        Username
+        "Username"
     input
         type: text
         id: username
         name: username
     label
         for: password
+        "Password"
     input
         type: text
         id: password
         name: password
-    type: submit
+    input
+        type: submit
+        value: Log In
 
 ### Error Handling
 
 Wrong login info
     Trigger: Submitted inputs does not match database entries
     Actions:
-        Message ("Incorrect Username or Password")
+        Message ("Incorrect Username or Password.")
         Redirect (Login page)
 
 Too many Attemps:
     Trigger: Failure to login after [???] attempts
     Actions:
-        Message ("Too many failed attempts. Please try again [???]")
+        Message ("Too many failed attempts. Please try again [???].")
         Account Lockout (Temporary, time based)
 
 ## Interactions
