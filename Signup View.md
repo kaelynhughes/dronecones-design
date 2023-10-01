@@ -1,4 +1,4 @@
-# Login View
+# Signup View
 
 ## View/Feature description
 
@@ -14,7 +14,7 @@ The form will have a button labelled 'Sign up' that will attempt to create an ac
 
 ## Functions needed
 
-### Login Form
+### Signup Form
 
 Action: [???]
     method: post
