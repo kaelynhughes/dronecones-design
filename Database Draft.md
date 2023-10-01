@@ -6,7 +6,7 @@ necessary.
 
 ---
 
-### Customer Table
+### User Table
 
 #### Columns
 
