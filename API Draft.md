@@ -110,7 +110,9 @@ Response fail: {error: string} 400
 
 api.GET("getOrders")
 
-Request params: {orderCount: number} # Note: this is to limit amount of orders, in case we've got a ton in the db.
+Request params: {orderCount: number, filter?} # Note: this is to limit amount of orders, in case we've got a ton in the db.
+
+#### Note: Optionally this may be filtered to show a specific user's order, etc.
 
 Response success: {order: Array<Order>}
 
