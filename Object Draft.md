@@ -54,7 +54,7 @@ id: Integer
 
 #### Attributes
 
-cones: Array<FullCone>
+cones: Array(FullCone)
 
 totalPrice: Float
 
@@ -76,4 +76,4 @@ id: Integer
 
 #### Attributes
 
-components: Array<Product> (We can parse the number of scoops and toppings from their count in this array)
+components: Array(Product) (We can parse the number of scoops and toppings from their count in this array)
