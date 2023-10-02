@@ -1,4 +1,4 @@
-# Drone Cone API Draft
+# Drone Cones API
 
 # Home Page
 
