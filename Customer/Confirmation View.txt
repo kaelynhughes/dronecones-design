@@ -1,0 +1,10 @@
+Confirmation View
+
+Picture
+
+View/Feature description (if needed)
+   * This page is the confirmation page where the customer will see a timer of when their order will arrive as well as a description of what they ordered.
+Functions needed
+   * Timer() will output time to delivery to the customer, when the time hits zero it will then display arrived.
+Interactions
+   * We will receive the order passed from the checkout view
