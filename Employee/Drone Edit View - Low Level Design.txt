@@ -1,19 +1,18 @@
 ﻿View Description
-* This view will contain every registered drone. This menu will be populated based on the number of registered drones. From there the user should be able to click on the drone they want to modify.
-* Clicking a drone will bring down a menu for that specific drone where the user will be able to edit and/or see information about that drone. Only one drone's information can be viewed at a time.
+* This view will contain every registered drone. This menu will be populated based on the number of registered drones. From there the user should be able to click edit on the drone they want to modify or delete to remove a registered drone.
+* Clicking edit on a drone will bring down a menu for that specific drone where the user will be able to edit basic information about that drone. Only one drone's information can be edite edited a time.
    * Drone Serial Number
-   * Order history
+   * Drone Name
    * Total Earnings
-   * Size
+   * Total orders
    * Active/Inactive Status - changeable toggle button
-   * Delete drone button
 * Save button that will allow the user to post data changed to the database and collapse the extended view. Upon clicking this button, a message will appear and say whether it was successful or not.
-* Return to general info floating action button will always be on the lower right of the screen. Upon click it will take the user to the general info screen.
+* Will be able to navigate back to other pages with rightside Nav bar
 Functions Needed
 * Input from database
    * Drone data for each drone employee has registered
    * Size
-   * Serial Number
+   * Drone Name
    * Order history for each drone
    * Total earning for each drone
    * Status of each drone
@@ -21,10 +20,10 @@ Functions Needed
 * Interactable card view that will populate information 
 * Toggle active/inactive buttons for each drone.
 * Save button to post data to drone database
-* General idea for how they work.
+* Delte button
 * completeOrderList - [] order object
 * completeDroneList - [] drone object
-* 1 Button to redirect user back to General Info page
+
 Interactions
 * Requests data from drone database
 * Posts data to the drone database
