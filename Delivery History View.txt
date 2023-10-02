@@ -1,0 +1,24 @@
+﻿View description
+* The purpose of this view will be to see all the delivery history of the employees drones.
+* Individual orders will be flexible and can grow for bigger orders
+* There will be a filter floating action button on the bottom right that will allow the user to filter out the orders they see based on the following:
+   * Types of ice cream
+   * By specific drone
+   * By cost of order
+* Upon clicking the floating action button a window will appear over the view to prompt the user to fill out how they want orders to be displayed following a second button within this filter to confirm and reload the page with their 
+specifications in URL.
+* While filling out fields out if one or multiple or not have been filled out, they won’t affect how they are sorted. Multiple fields being filled out are possible
+* Every order the employee has delivered will be populated onto the screen if no filter specification have been given
+   * By default it will be populated based on most recent
+* Each order will display the total on the top followed by the date the order was  placed. Everything underneath will be the items and their specifications.
+* If no orders have been placed with that employee’s drones, A message will instead appear saying that orders will appear here.
+Functions needed
+* Inputs and outputs for functions
+* The user will need to fill out the fields for filtering
+* Filtering function if argument is given in the URL for filtering
+* orderHistoryList - [] order ID’s
+* totalPriceList - [] total prices
+* timesLists - [] timestamps
+Interactions
+* Data from the employees order history will be pulled
+* Input can be given in the url to use filter but there will be a more user friendly option with the filter menu
