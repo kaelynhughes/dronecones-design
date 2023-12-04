@@ -1,4 +1,4 @@
-# Data Object Classes Draf
+# Data Object Classes
 
 ---
 
@@ -6,13 +6,13 @@
 
 #### Attributes
 
-username: String
+username: string
 
-userType: Enum ("Customer", "Employee", "Manager")
+user_type: enum ("Customer", "Employee", "Manager", "Guest")
 
-isActive: Boolean
+isActive: boolean
 
-id: Integer
+id:number
 
 ---
 
@@ -20,17 +20,15 @@ id: Integer
 
 #### Attributes
 
-name: String
+display_name: string
 
-stock: Integer
+stock: number
 
-ppu: Float
+price_per_unit: number
 
-img: Image
+product_type: enum ("IceCream", "Cone", "Topping")
 
-type: Enum ("IceCream", "Cone", "Topping")
-
-id: Integer
+id: number
 
 ---
 
@@ -38,15 +36,15 @@ id: Integer
 
 #### Attributes
 
-name: String
+display_name: string
 
-id: Number
+id: number
 
-isActive: Boolean
+is_active: boolean
 
-size: Enum ("Small", "Medium", "Large")
+drone_size: number
 
-id: Integer
+id: number
 
 ---
 
@@ -56,19 +54,17 @@ id: Integer
 
 cones: Array(FullCone)
 
-totalPrice: Float
+total_price: number
 
-employeeCut: Float
+employee_cut: number
 
-remainder: Float
+profit: number
 
-timestamp: Date
+order_time: string
 
-droneId: Integer
+customer_id: number
 
-userId: Integer
-
-id: Integer
+id: number
 
 ---
 
@@ -76,4 +72,5 @@ id: Integer
 
 #### Attributes
 
-components: Array(Product) (We can parse the number of scoops and toppings from their count in this array)
+products: Array(Product)
+drone_id: number
