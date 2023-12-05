@@ -10,15 +10,15 @@ necessary.
 
 #### Columns
 
-pkUserId: Integer
+pkId: Integer
 
 username: Text
 
 password: Text (salted and hashed)
 
-userType: Text (Enum constraint to "Customer", "Employee", and "Manager")
+user_type: Text (Enum constraint to "Guest", "Customer", "Employee", and "Manager")
 
-isActive: Integer (0 or 1, SQLite doesn't support Boolean type)
+is_active: Integer (0 or 1, SQLite doesn't support Boolean type)
 
 ---
 
@@ -26,15 +26,13 @@ isActive: Integer (0 or 1, SQLite doesn't support Boolean type)
 
 #### Columns
 
-pkProductId: Integer
+pkId: Integer
 
-name: Text
+display_name: Text
 
 stock: Integer
 
-ppu: Real (SQLite's floating point type)
-
-img: Blob (Large Binary Object, stores data like images)
+price_per_unit: Integer
 
 productType: Text (Enum constraint to "IceCream", "Cone", and "Topping")
 
@@ -44,17 +42,17 @@ productType: Text (Enum constraint to "IceCream", "Cone", and "Topping")
 
 #### Columns
 
-pkDroneId: Integer
+pkId: Integer
 
-name: Text
+display_name: Text
 
-id: Integer
+serial_number: Text
 
-isActive: Integer (0, 1)
+is_active: Integer (0, 1)
 
 size: Integer (Constained to 1, 2, 3)
 
-fkUserId: Integer
+fkowner_id: Integer
 
 ---
 
@@ -62,18 +60,15 @@ fkUserId: Integer
 
 #### Columns
 
-pkOrderId: Integer
+pkId: Integer
 
-totalPrice: Real
+total_price: Real
 
-employeeCut: Real
+employee_cut: Real
 
-remainder: Real
+profit: Real
 
-timestamp: Text (SQLite supports ISO8601 timestamps, but this could also be an Integer field of milliseconds in epoch time)
-
-fkDroneId: Integer (We could potentially use a JSON object to store multiple drone id's as well, if
-necessary)
+order_time: Text
 
 fkUserId: Integer
 
@@ -107,9 +102,9 @@ fkOrderId: Integer
 
 #### Columns
 
-pkRestockId: Integer
+pkId: Integer
 
-timestamp: Text
+restock_time: Text
 
-expense: Real
+cost: Real
 
